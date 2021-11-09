@@ -1,0 +1,17 @@
+String.prototype.replaceAt=function(index, character) { return this.substr(0, index) + character + this.substr(index+character.length); } 
+
+const palabra = ["casa","perro","gato","elefante"];
+const palabras = palabra[Math.floor(Math.random()* palabra.length)];
+let palabraConGuion = palabras.replace(/./g,"_ ");
+$("#output").html( $("#calcular").click(function (e) {
+  const letra = $("#letra").attr('value');
+	for(const i in palabras)
+	{
+		if(letra == palabras[i])
+		{
+			palabraConGuion = palabraConGuion.replaceAt(i*2, letra);
+		}
+		
+	}
+
+});
